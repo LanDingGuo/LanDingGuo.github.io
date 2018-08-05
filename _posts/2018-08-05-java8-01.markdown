@@ -1,0 +1,33 @@
+---
+layout: post
+title: java8新特性（一）——Lambda表达式
+date: 2018-08-05 18:13:20 +0300
+description: java8新特性系列介绍。 # Add post description (optional)
+img: post-6.jpg # Add image post (optional)
+tags: [Blog, java基础]
+author: LanDinguo# Add name author (optional)
+---
+##Lambda表达式
+>Lambda表达式，也可称为闭包，它是推动java8发布的最重要新特性。</br>
+>Lambda允许把函数作为一个方法的参数（函数作为参数传递进方法中）。<br/>
+>使用Lambda表达式可以使代码变的更加简洁紧凑。
+
+###语法糖
+java中lambda表达式的格式：<br/>
+>（parameters）-> expression</br>
+或<br/>
+>(parameters) ->{ statements; }
+
+通过comparator作为例子。在java8之前，可以借助匿名内部类来实现。<br/>
+{% highlight java %}
+ public static List<String> compareTest1(){
+    List<String> wordList = Arrays.asList("lianggzone", "spring", "summer", "autumn", "winter");
+    wordList.sort(new Comparator<String>() {
+        @Override
+        public int compare(String w1, String w2) {
+            return Integer.compare(w1.length(), w2.length());
+        }
+    });
+    return wordList;        
+ }
+{% endhighlight %}
