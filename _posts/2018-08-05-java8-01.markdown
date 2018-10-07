@@ -1,331 +1,293 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-<title>2018-08-05-java8-01</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<style type="text/css">
-/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
-/* Author: Nicolas Hery - http://nicolashery.com */
-/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
-/* Source: https://github.com/nicolahery/markdownpad-github */
-
-/* RESET
-=============================================================================*/
-
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
-/* BODY
-=============================================================================*/
-
-body {
-  font-family: Helvetica, arial, freesans, clean, sans-serif;
-  font-size: 14px;
-  line-height: 1.6;
-  color: #333;
-  background-color: #fff;
-  padding: 20px;
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-body>*:first-child {
-  margin-top: 0 !important;
-}
-
-body>*:last-child {
-  margin-bottom: 0 !important;
-}
-
-/* BLOCKS
-=============================================================================*/
-
-p, blockquote, ul, ol, dl, table, pre {
-  margin: 15px 0;
-}
-
-/* HEADERS
-=============================================================================*/
-
-h1, h2, h3, h4, h5, h6 {
-  margin: 20px 0 10px;
-  padding: 0;
-  font-weight: bold;
-  -webkit-font-smoothing: antialiased;
-}
-
-h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
-  font-size: inherit;
-}
-
-h1 {
-  font-size: 28px;
-  color: #000;
-}
-
-h2 {
-  font-size: 24px;
-  border-bottom: 1px solid #ccc;
-  color: #000;
-}
-
-h3 {
-  font-size: 18px;
-}
-
-h4 {
-  font-size: 16px;
-}
-
-h5 {
-  font-size: 14px;
-}
-
-h6 {
-  color: #777;
-  font-size: 14px;
-}
-
-body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
-  margin-top: 0;
-  padding-top: 0;
-}
-
-a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
-  margin-top: 0;
-  padding-top: 0;
-}
-
-h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
-  margin-top: 10px;
-}
-
-/* LINKS
-=============================================================================*/
-
-a {
-  color: #4183C4;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* LISTS
-=============================================================================*/
-
-ul, ol {
-  padding-left: 30px;
-}
-
-ul li > :first-child, 
-ol li > :first-child, 
-ul li ul:first-of-type, 
-ol li ol:first-of-type, 
-ul li ol:first-of-type, 
-ol li ul:first-of-type {
-  margin-top: 0px;
-}
-
-ul ul, ul ol, ol ol, ol ul {
-  margin-bottom: 0;
-}
-
-dl {
-  padding: 0;
-}
-
-dl dt {
-  font-size: 14px;
-  font-weight: bold;
-  font-style: italic;
-  padding: 0;
-  margin: 15px 0 5px;
-}
-
-dl dt:first-child {
-  padding: 0;
-}
-
-dl dt>:first-child {
-  margin-top: 0px;
-}
-
-dl dt>:last-child {
-  margin-bottom: 0px;
-}
-
-dl dd {
-  margin: 0 0 15px;
-  padding: 0 15px;
-}
-
-dl dd>:first-child {
-  margin-top: 0px;
-}
-
-dl dd>:last-child {
-  margin-bottom: 0px;
-}
-
-/* CODE
-=============================================================================*/
-
-pre, code, tt {
-  font-size: 12px;
-  font-family: Consolas, "Liberation Mono", Courier, monospace;
-}
-
-code, tt {
-  margin: 0 0px;
-  padding: 0px 0px;
-  white-space: nowrap;
-  border: 1px solid #eaeaea;
-  background-color: #f8f8f8;
-  border-radius: 3px;
-}
-
-pre>code {
-  margin: 0;
-  padding: 0;
-  white-space: pre;
-  border: none;
-  background: transparent;
-}
-
-pre {
-  background-color: #f8f8f8;
-  border: 1px solid #ccc;
-  font-size: 13px;
-  line-height: 19px;
-  overflow: auto;
-  padding: 6px 10px;
-  border-radius: 3px;
-}
-
-pre code, pre tt {
-  background-color: transparent;
-  border: none;
-}
-
-kbd {
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    background-color: #DDDDDD;
-    background-image: linear-gradient(#F1F1F1, #DDDDDD);
-    background-repeat: repeat-x;
-    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
-    border-image: none;
-    border-radius: 2px 2px 2px 2px;
-    border-style: solid;
-    border-width: 1px;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    line-height: 10px;
-    padding: 1px 4px;
-}
-
-/* QUOTES
-=============================================================================*/
-
-blockquote {
-  border-left: 4px solid #DDD;
-  padding: 0 15px;
-  color: #777;
-}
-
-blockquote>:first-child {
-  margin-top: 0px;
-}
-
-blockquote>:last-child {
-  margin-bottom: 0px;
-}
-
-/* HORIZONTAL RULES
-=============================================================================*/
-
-hr {
-  clear: both;
-  margin: 15px 0;
-  height: 0px;
-  overflow: hidden;
-  border: none;
-  background: transparent;
-  border-bottom: 4px solid #ddd;
-  padding: 0;
-}
-
-/* TABLES
-=============================================================================*/
-
-table th {
-  font-weight: bold;
-}
-
-table th, table td {
-  border: 1px solid #ccc;
-  padding: 6px 13px;
-}
-
-table tr {
-  border-top: 1px solid #ccc;
-  background-color: #fff;
-}
-
-table tr:nth-child(2n) {
-  background-color: #f8f8f8;
-}
-
-/* IMAGES
-=============================================================================*/
-
-img {
-  max-width: 100%
-}
-</style>
-</head>
-<body>
-<hr />
-<p>layout: post
+---
+layout: post
 title: java8新特性（一）——Lambda表达式
 date: 2018-08-05 18:13:20 +0300
 description: java8新特性系列介绍。 # Add post description (optional)
 img: post-6.jpg # Add image post (optional)
-tags: [Blog, java基础]</p>
-<h2>author: LanDinguo# Add name author (optional)</h2>
+tags: [Blog, java基础]
+author: LanDinguo# Add name author (optional)
+---
 <h2>Lambda表达式</h2>
-<blockquote>
-<p>Lambda表达式，也可称为闭包，它是推动java8发布的最重要新特性。</p>
-<p>Lambda允许把函数作为一个方法的参数（函数作为参数传递进方法中）。<br/>
-使用Lambda表达式可以使代码变的更加简洁紧凑。</p>
-</blockquote>
-<h3>语法糖</h3>
-<p>java中lambda表达式的格式：<br/></p>
-<blockquote>
-<p>（parameters）-&gt; expression</br>
-或<br/>
-(parameters) -&gt;{ statements; }</p>
-</blockquote>
-<p>通过comparator作为例子。在java8之前，可以借助匿名内部类来实现。<br/>
-{% highlight java %}
- public static List<String> compareTest1(){
-    List<String> wordList = Arrays.asList(&quot;lianggzone&quot;, &quot;spring&quot;, &quot;summer&quot;, &quot;autumn&quot;, &quot;winter&quot;);
-    wordList.sort(new Comparator<String>() {
-        @Override
-        public int compare(String w1, String w2) {
-            return Integer.compare(w1.length(), w2.length());
-        }
-    });
-    return wordList;      <br />
- }
-{% endhighlight %}</p>
+>Lambda表达式，也可称为闭包，它是推动java8发布的最重要新特性。
+>Lambda允许把函数作为一个方法的参数（函数作为参数传递进方法中）。<br/>
+>使用Lambda表达式可以使代码变的更加简洁紧凑。
 
-</body>
-</html>
-<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
+<h3>语法糖</h3>
+<h4>lambda表达式的格式：</h4>
+
+      <函数式接口>  <变量名> = (参数1，参数2...) -> {
+                    //方法体
+      }
+
+使用Lambda表达式时，接口必须是函数式接口<br/>
+<h4>说明：</h4>
+<P>(参数1，参数2…)表示参数列表；->表示连接符；{}内部是方法体</P>
+<p>1. =右边的类型会根据左边的函数式接口类型自动推断； </P>
+<p>2. 如果形参列表为空，只需保留()； </P>
+<p>3. 如果形参只有1个，()可以省略，只需要参数的名称即可；</P>
+<p>4. 如果执行语句只有1句，且无返回值，{}可以省略，若有返回值，则若想省去{}，则必须同时省略return，且执行语句也保证只有1句；</P>
+<p>5. 形参列表的数据类型会自动推断； </P>
+<p>6. lambda不会生成一个单独的内部类文件；  </P>
+<p>7、lambda表达式若访问了局部变量，则局部变量必须是final的，若是局部变量没有加final关键字，系统会自动添加，此后在修改该局部变量，会报错；</P>
+<h4>示例代码</h4>
+{% highlight java %}
+public interface LambdaTest {
+
+    abstract void print();
+}
+
+public interface LambdaTest2 {
+
+    abstract void print(String a);
+}
+
+public interface DefalutTest {
+
+    static int a =5;
+    default void defaultMethod(){
+        System.out.println("DefalutTest defalut 方法");
+    }
+
+    int sub(int a,int b);
+
+    static void staticMethod() {
+        System.out.println("DefalutTest static 方法");
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        //匿名内部类--java8之前的实现方式
+        DefalutTest dt = new DefalutTest(){
+            @Override
+            public int sub(int a, int b) {
+                // TODO Auto-generated method stub
+                return a-b;
+            }
+        };
+
+        //lambda表达式--实现方式1
+        DefalutTest dt2 =(a,b)->{
+            return a-b;
+        };
+        System.out.println(dt2.sub(2, 1));
+
+        //lambda表达式--实现方式2，省略花括号
+        DefalutTest dt3 =(a,b)->a-b;
+        System.out.println(dt3.sub(5, 6));
+
+        //测试final
+        int c = 5;
+        DefalutTest dt4 =(a,b)->a-c;
+        System.out.println(dt4.sub(5, 6));
+
+        //无参方法，并且执行语句只有1条
+        LambdaTest lt = ()-> System.out.println("测试无参");
+        lt.print();
+        //只有一个参数方法
+        LambdaTest2 lt1 = s-> System.out.println(s);
+        lt1.print("有一个参数");
+    }
+}
+{% endhighlight %}
+<h4>其它特性</h4>
+1.引用实例方法
+
+语法：
+
+	<函数式接口>  <变量名> = <实例>::<实例方法名>
+    //调用
+    <变量名>.接口方法([实际参数...])
+实例：
+
+	public class Main {
+
+    public static void main(String[] args) {
+
+        LambdaTest2 lt1 = s-> System.out.println(s);
+        lt1.print("有一个参数");
+
+        //改写为：
+        LambdaTest2 lt2 = System.out::println;
+        lt2.print("实例引用方式调用");
+    	}
+	}
+
+2.引用类方法
+
+语法：
+
+	<函数式接口>  <变量名> = <类>::<类方法名称>
+    //调用
+    <变量名>.接口方法([实际参数...])
+
+示例：
+
+	public interface LambdaTest3 {
+
+     abstract void sort(List<Integer> list,Comparator<Integer> c);
+	}
+
+	public class Main {
+
+    public static void main(String[] args) {
+        List<Integer>  list = new ArrayList<Integer>();
+        list.add(50);
+        list.add(18);
+        list.add(6);
+        list.add(99);
+        list.add(32);
+        System.out.println(list.toString()+"排序之前");
+        LambdaTest3 lt3 = Collections::sort;
+        lt3.sort(list, (a,b) -> {
+            return a-b;
+        });
+        System.out.println(list.toString()+"排序之后");
+	    }
+	}
+
+3.函数式接口
+
+示例代码：
+	
+	@FunctionalInterface
+	interface Converter<F, T> {
+    T convert(F from);
+	}
+	Converter<String, Integer> converter = (from) -> Integer.valueOf(from);
+	Integer converted = converter.convert("123");
+	System.out.println(converted);    // 123
+
+4.Lambda 作用域
+
+   可以直接访问标记了final的外层局部变量，或者实例的字段以及静态变量。 
+
+5.访问局部变量
+
+  我们可以直接在lambda表达式中访问外层的局部变量，但是该局部变量必须是final的，即使没有加final关键字，之后我们无论在哪（lambda表达式内部或外部）修改该变量，均报错。
+
+6.访问对象字段与静态变量
+
+lambda内部对于实例的字段以及静态变量是即可读又可写
+
+示例：
+
+	class Lambda4 {
+    static int outerStaticNum;
+    int outerNum;
+    void testScopes() {
+        Converter<Integer, String> stringConverter1 = (from) -> {
+            outerNum = 23;
+            return String.valueOf(from);
+        };
+        Converter<Integer, String> stringConverter2 = (from) -> {
+            outerStaticNum = 72;
+            return String.valueOf(from);
+        };
+    }
+	}
+7.访问接口的默认方法
+
+Predicate接口 
+
+option接口
+
+	Optional 被定义为一个简单的容器，其值可能是null或者不是null。
+	在Java 8之前一般某个函数应该返回非空对象但是偶尔却可能返回了null
+	而在Java 8中，不推荐你返回null而是返回Optional。
+
+stream接口
+>创建stream–通过of方法
+
+示例：
+	
+	Stream<Integer> integerStream = Stream.of(1, 2, 3, 5);
+	Stream<String> stringStream = Stream.of("taobao");
+
+>创建stream–通过generator方法 
+>>生成一个无限长度的Stream，其元素的生成是通过给定的Supplier（这个接口可以看成一个对象的工厂，每次调用返回一个给定类型的对象）
+
+	Stream.generate(new Supplier<Double>() {
+
+    @Override
+
+    public Double get() {
+
+        return Math.random();
+
+    }
+
+	});
+
+	Stream.generate(() -> Math.random());
+
+	Stream.generate(Math::random);
+
+>创建stream–通过iterate方法 
+>>也是生成无限长度的Stream，和generator不同的是，其元素的生成是重复对给定的种子值(seed)调用用户指定函数来生成的。其中包含的元素可以认为是：seed，f(seed),f(f(seed))无限循环
+
+示例：
+	
+	Stream.iterate(1, item -> item + 1).limit(10).forEach(System.out::println); 
+	这段代码就是先获取一个无限长度的正整数集合的Stream，然后取出前10个打印
+>通过Collection子类获取Stream
+示例：
+	
+	public interface Collection<E> extends Iterable<E> {
+
+    //其他方法省略
+
+    default Stream<E> stream() {
+
+        return StreamSupport.stream(spliterator(), false);
+
+    	}
+	}
+
+steam的其它应用
+>count()、max()、min()方法
+
+>filter过滤方法：过滤通过一个predicate接口来过滤并只保留符合条件的元素，该操作属于中间操作
+
+>distinct方法 去重
+
+>sort 排序
+
+>map映射
+
+>limit
+
+>skip
+
+>match匹配
+
+>count计数
+
+>reduce规约：这是一个最终操作，允许通过指定的函数来讲stream中的多个元素规约为一个元素，规越后的结果是通过Optional接口表示的
+
+Map
+
+示例：
+	
+	Map<Integer, String> map = new HashMap<>();
+	for (int i = 0; i < 10; i++) {
+    	map.putIfAbsent(i, "val" + i);
+	}
+	map.forEach((id, val) -> System.out.println(val));
+	map.computeIfPresent(3, (num, val) -> val + num);
+	map.get(3);             // val33
+	map.computeIfPresent(9, (num, val) -> null);
+	map.containsKey(9);     // false
+	map.computeIfAbsent(23, num -> "val" + num);
+	map.containsKey(23);    // true
+	map.computeIfAbsent(3, num -> "bam");
+	map.get(3);             // val33
+	map.getOrDefault(42, "not found");  // not found
+
+
+	map.merge(9, "val9", (value, newValue) -> value.concat(newValue));
+	map.get(9);             // val9
+	map.merge(9, "concat", (value, newValue) -> value.concat(newValue));
+	map.get(9);             // val9concat
+	Merge做的事情是如果键名不存在则插入，否则则对原键对应的值做合并操作并重新插入到map中
