@@ -1,6 +1,6 @@
 ---
 layout: post
-title: java8新特性（一）——Lambda表达式
+title: java8新特性
 date: 2018-08-05 18:13:20 +0300
 description: java8新特性系列介绍。 # Add post description (optional)
 img: post-6.jpg # Add image post (optional)
